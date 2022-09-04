@@ -7,7 +7,7 @@ namespace SistemaCitasMedicas
         public static string ImprimirCita(Cita cita)
         {
             StringBuilder textoCita = new StringBuilder();
-            textoCita.Append("-----------------------\n");
+            textoCita.Append("-------------------------\n");
             if (cita.Valido && cita.Paciente.Valido && cita.Doctor.Valido)
             {
 
@@ -19,7 +19,7 @@ namespace SistemaCitasMedicas
             {
                 textoCita.Append("Cita Inválida\n");
             }
-            textoCita.Append("-----------------------");
+            textoCita.Append("-------------------------");
             return textoCita.ToString();
         }
     }
