@@ -8,7 +8,7 @@ namespace SRP
     {
         static void Main()
         {
-            Libreria libreria1 = new Libreria();
+            Libreria libreria1 = new Libreria("Librería Central");
             Estanteria estanteriaA = new Estanteria("A");
             Estanteria estanteriaB = new Estanteria("B");
             Libro libro1 = new Libro("Design Patterns","Erich Gamma & Others","001-034");
@@ -20,10 +20,10 @@ namespace SRP
             Console.WriteLine("-----------------------------");
             foreach(KeyValuePair<int, Estanteria> estanteria in libreria1.Coleccion)
             {
-                Console.WriteLine($"Estanteria: {estanteria.Value.Nombre}");
+                Console.WriteLine($"Librería: {libreria1.Nombre}\nSector: {estanteria.Key}\nEstanteria: {estanteria.Value.Nombre}");
                 foreach(KeyValuePair<int, Libro> libro in estanteria.Value.PosicionesLibros)
                 {
-                    Console.WriteLine($"Posición: {libro.Key} \nNombre: {libro.Value.Title}\nAutor: {libro.Value.Author}\nCódigo: {libro.Value.Code}");
+                    Console.WriteLine($"Libro: {libro.Value.Title}\nAutor: {libro.Value.Author}\nCódigo: {libro.Value.Code}\nPosición: {libro.Key} ");
                 }
                 Console.WriteLine("-----------------------------");
             }
